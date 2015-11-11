@@ -20,7 +20,7 @@ The true power in TypeScript comes through working in larger-scale projects.  I 
 
 Let's get started analyzing the differences between JavaScript and TypeScript currently found in my code.
 
-#### Install and Dependencies
+##### Install and Dependencies
 
 TypeScript can be installed by using `npm`.  I personally suggest installing it both locally and globally as seen below:
 ```
