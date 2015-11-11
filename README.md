@@ -20,11 +20,25 @@ The true power in TypeScript comes through working in larger-scale projects.  I 
 
 Let's get started analyzing the differences between JavaScript and TypeScript currently found in my code.
 
-##### Install and Dependencies
+##### Install
 
 TypeScript can be installed by using `npm`.  I personally suggest installing it both locally and globally as seen below:
 ```
 npm install -g typescript
 npm install typescript
 ```
+With that done, let's look at my first few lines of code.
 
+##### Code, part 1
+In the first file (Typing.ts), it starts out with an ES6 class:
+```typescript
+class MeObj {
+	constructor(name: string) {
+		this.name = name;
+	};
+	name: string;
+	setName(newName: string) {
+		this.name = newName;
+	};
+};
+```
