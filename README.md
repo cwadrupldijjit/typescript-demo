@@ -23,7 +23,7 @@ Let's get started analyzing the differences between JavaScript and TypeScript cu
 ##### Install
 
 TypeScript can be installed by using `npm`.  I personally suggest installing it both locally and globally as seen below:
-```
+``` npm
 npm install -g typescript
 npm install typescript
 ```
@@ -33,12 +33,27 @@ With that done, let's look at my first few lines of code.
 In the first file (Typing.ts), it starts out with an ES6 class:
 ```typescript
 class MeObj {
+  // constructor function for new objects
 	constructor(name: string) {
 		this.name = name;
 	};
+  
+  // properties on that object
 	name: string;
 	setName(newName: string) {
 		this.name = newName;
 	};
 };
 ```
+
+Later on, I wanted to create a new `MeObj` that represented myself, but I accidentally tried passing it my age instead of a string:
+```typescript
+var me = new MeObj(23);
+```
+
+My text editor checks the type of what I passed in (`23` or a `number`) against the type I'd specified in the constructor (`string`) and promptly underlines the errant value (`23`) with a red squiggly line.  If I were to try to transcompile this to JavaScript at that moment, the compiler would throw an error saying that I need to fix that line of code.  Realizing this, I fixed my code to sending the constructor my name instead of my age:
+```typescript
+var me = new MeObj('Sam Skeen');
+```
+
+Seeing that I'm now properly sending the constructor the correct type, it will successfully create a new object with my name.
