@@ -168,8 +168,8 @@ module.exports = {
 With that set up, Webpack will run.  However, in order to make sure that the TypeScript compiling will behave like you'd want to, you need to add another file, a `tsconfig.json`, in order to make it work.  This is how I set mine up:
 ```json
 {
-	"compilerOptions": {    // options that would've been added to the command line had you 
-                          // done that in the first place
+	"compilerOptions": {    // "options that would've been added to the command line had you" 
+                          // "done that in the first place"
 		"target": "ES5",      // the target version of ECMAScript for the TypeScript to be
                           // compiled to
 		"sourceMap": true,    // option for adding a source map to your original code
