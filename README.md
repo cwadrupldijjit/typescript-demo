@@ -144,21 +144,23 @@ module.exports = {
 	
 	devtool: 'eval',   // Webpack tool to allow any errors that the browser encounters while
                      // executing your code in the bundle.js to point instead to the original
-                     // file
+                     // file.  SUPER wordy, I know, but trust me, it helps a bunch.
 	
 	resolve: {
 		extensions: ['', '.webpack.js', '.seb.js', '.ts', '.tsx', '.js']
-	},
+	},         // defines allowed extensions so webpack doesn't ignore the wrong file types
 	
 	module: {
 		loaders: [
 			{test: /\.tsx$|\.ts$/, exclude: /node_modules/, loaders: ['ts-loader']}
-		]
-	},
+		]        // defines the module and loaders you want to use in this project
+	},         // if you are confused about the regular expressions found on the "test" property,
+             // just know that all that does is looks for and selects the typescript files only
+             // so that this loader can interact with them the way it needs to.
 	
 	output: {
-		path: './',
-		filename: './bundle.js'
-	}
+		path: './',               // relative path to where you want the output file to go
+		filename: './bundle.js'   // and then you define the file name that you want Webpack to
+	}                           // dump the files into
 };
 ``` 
