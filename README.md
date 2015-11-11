@@ -30,7 +30,8 @@ npm install typescript
 ```
 With that done, let's look at my first few lines of code.
 
-##### Code, part 1
+##### Code
+
 In the first file (Typing.ts), it starts out with an ES6 class:
 ```typescript
 class MeObj {
@@ -184,3 +185,49 @@ With that set up, Webpack will run.  However, in order to make sure that the Typ
 }                                    // "the frameworks you're trying to use and not throw an"
                                      // "error saying that it can't find such-and-such variable"
 ```
+
+Now, when you run webpack (from the same directory in which the `webpack.config.js` is located):
+```command
+webpack
+```
+... you will notice that you now have the bundle.js in your root folder.  Just like the TypeScript compiler, you can also set Webpack to watch the files for changes.  You do it like so from your command line:
+```command
+webpack --watch
+```
+And you're all set.  Now, whenever you create new `.ts` and `.tsx` files or change anything in them, Webpack will take care of it all for you, and your project becomes much easier to deal with.  I took the opportunity to do this in the Typing.ts file, and added more code:
+```typescript
+function replaceMe(newPerson: MeObj) {
+	me = newPerson;
+}
+
+// replaceMe('Dr. Dingelhopper');	// Doesn't like the fact that I'm trying to pass in 
+									// a string instead of an object that matches the criteria for MeObj
+
+let Superman = new MeObj('Clark Kent');
+
+replaceMe(Superman);
+```
+
+Webpack took that and automatically transpiled it into the bundle.js, and we're good to use that code in your web app.
+
+One last thing I wanted to mention, though.  In the example directly above, I created a function called `replaceMe` that would overwrite my information with someone else.  Just like TypeScript has the basic static typing (array, string, object, number), you can use objects and classes to statically type the parameters and variables you create, in this case so that only a valid `MeObj` would be allowed to be passed in.  Consider this example:
+```typescript
+replaceMe({                     // TypeScript rejects this because it doesn't have the
+	name: 'Ginger Snapps',        // exact same properties as the MeObj class has.
+	setName(newName: string) {
+		this.name = newName;
+	}                             // HOWEVER, after adding the age property
+});
+
+replaceMe({                     // This will work perfectly fine
+	name: 'Ginger Snapps',
+	age: 35,
+	setName(newName: string) {
+		this.name = newName;
+	}
+});
+```
+
+I hope that this repo was helpful to you in seeing how TypeScript can be useful in your projects.  If you have any questions or issues, send me a pull request or comment.
+
+Thanks! 
