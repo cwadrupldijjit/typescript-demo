@@ -127,6 +127,38 @@ The downside to this is that you have to reference **EVERY SINGLE FILE** in your
 
 ### What is Webpack?
 
-[Webpack](http://www.)
+[Webpack](https://webpack.github.io) is a module bundler for websites.  It can automate the process for several things such as transcompiling SASS, LESS, ES6, ES7, or TypeScript into formats the browsers will understand as well as put everything all together into one file so that your index.html scripts or links go from referencing 20+ files and having to add a new one if you created a new file to only having to reference one file, and Webpack will take care of doing that.  You can also set it to watch your files for any changes, and auto-concatenate without having to return to the command line.  Webpack requires loaders for transpiling, and I'll be using the [ts-loader](https://github.com/TypeStrong/ts-loader) to do the work for me.
 
-#### Webpack
+#### Installing and Configuring Webpack
+
+You can install Webpack and the TypeScript loader through npm:
+```command
+npm install -g webpack
+npm install --save-dev webpack ts-loader
+```
+
+Once that has installed, you need to configure Webpack so that it knows what to do.  I created a file called `webpack.config.js` which is the starting point for our Webpack configuration.  The explanation for each portion is found in a comment next to it.
+```javascript
+module.exports = {
+	entry: './Typing.ts',  // relative path to the main file of your project
+	
+	devtool: 'eval',   // Webpack tool to allow any errors that the browser encounters while
+                     // executing your code in the bundle.js to point instead to the original
+                     // file
+	
+	resolve: {
+		extensions: ['', '.webpack.js', '.seb.js', '.ts', '.tsx', '.js']
+	},
+	
+	module: {
+		loaders: [
+			{test: /\.tsx$|\.ts$/, exclude: /node_modules/, loaders: ['ts-loader']}
+		]
+	},
+	
+	output: {
+		path: './',
+		filename: './bundle.js'
+	}
+};
+``` 
