@@ -1,6 +1,6 @@
 # TYPESCRIPT DEMO
 
-This repo is created to demonstrate the use of TypeScript.  All files in this repo with the file extension `.ts` or `.tsx` are designated TypeScript files, and where the focus is for this repo.
+This repo is created to demonstrate the use of TypeScript.  All files in this repo with the file extension `.ts` or `.tsx` are designated TypeScript files, and where the focus is for this repo.  This project doesn't show a finished product such as a fully-functioning website, but only goes over some of the basics of TypeScript
 
 
 ### What is TypeScript?
@@ -15,3 +15,16 @@ This repo is created to demonstrate the use of TypeScript.  All files in this re
   - The next full iteration of Angular (Angular 2.0) will be using TypeScript, which will in the end require users to use TypeScript itself.  You will have an advantage if you are familiar with TypeScript 
 
 The true power in TypeScript comes through working in larger-scale projects.  I haven't been affiliated with a large-scale project using TypeScript as of yet, however I've found uses for it in smaller scales, particularly since it supports ECMAScript 6 syntax, and the transpiler can compile it down to ECMAScript 5, since current browsers don't completely support ECMAScript 6 at the time of writing.
+
+### Demo
+
+Let's get started analyzing the differences between JavaScript and TypeScript currently found in my code.
+
+#### Install and Dependencies
+
+TypeScript can be installed by using `npm`.  I personally suggest installing it both locally and globally as seen below:
+```
+npm install -g typescript
+npm install typescript
+```
+
