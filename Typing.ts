@@ -1,3 +1,5 @@
+// Bad code is commented out
+
 class MeObj {
 	// constructor function for new objects
 	constructor(name: string) {
@@ -15,7 +17,7 @@ class MeObj {
 
 
 
-// var me = new MeObj(23);
+// var me = new MeObj(23);	// doesn't like me passing a number in instead of a string
 
 
 var me = new MeObj('Sam Skeen');
@@ -28,9 +30,10 @@ function setName_me(newName:string) {
 	me.name = newName;
 }
 
-// me.setName(5);
-// setName_me({
-// 	name: 'Herbert'
+// me.setName(5);	// doesn't like me passing a number in instead of a string
+
+// setName_me({		// doesn't like me passing in an object instead of a string
+// 	name: 'Jar Jar'
 // });
 
 me.setName('R2-D2');
@@ -46,7 +49,7 @@ function replaceMe(newPerson: MeObj) {
 
 
 
-// replaceMe('Dr. Dingelhopper');
+// replaceMe('Dr. Dingelhopper');	// Doesn't like the fact that I'm trying to pass in a string instead of an object that matches the criteria for MeObj
 
 
 let Superman = new MeObj('Clark Kent');

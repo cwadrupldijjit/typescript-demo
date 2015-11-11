@@ -1,11 +1,11 @@
-# TYPESCRIPT DEMO
+# TYPESCRIPT AND WEBPACK DEMO
 
 This repo is created to demonstrate the use of TypeScript.  All files in this repo with the file extension `.ts` or `.tsx` are designated TypeScript files, and where the focus is for this repo.  This project doesn't show a finished product such as a fully-functioning website, but only goes over some of the basics of TypeScript
 
 
 ### What is TypeScript?
 
-**[Typescript](www.typescriptlang.org)** is a superset of JavaScript--it extends the functionality of vanilla JavaScript by allowing to statically type variables as well as to use future ECMAScript syntax (though if you prefer to have a larger library for future ECMAScript syntax, I would suggest looking into [Babel](https://babeljs.io)).  I like using TypeScript for a few different reasons:
+**[Typescript](http://www.typescriptlang.org)** is a superset of JavaScript--it extends the functionality of vanilla JavaScript by allowing to statically type variables as well as to use future ECMAScript syntax (though if you prefer to have a larger library for future ECMAScript syntax, I would suggest looking into [Babel](https://babeljs.io)).  I like using TypeScript for a few different reasons:
   - All valid JavaScript is valid TypeScript, which makes learning it easier for someone who is coming from a JavaScript background.  It also is helpful for people who have worked in a object-ortiented programming background (such as C++, C#, or Java), as they are used to much of the ECMAScript 6+ syntaxes as well as the variables are statically typed.
   - Statically typing variables can catch bugs earlier on, before you even try to execute the code in a browser.
   - In my code editor, [Visual Studio Code](https://code.visualstudio.com), as well as others which you can add plugins to, it allows for better IntelliSense while coding, as it remembers properties of objects better.
@@ -15,6 +15,11 @@ This repo is created to demonstrate the use of TypeScript.  All files in this re
   - The next full iteration of Angular (Angular 2.0) will be using TypeScript, which will in the end require users to use TypeScript itself.  You will have an advantage if you are familiar with TypeScript 
 
 The true power in TypeScript comes through working in larger-scale projects.  I haven't been affiliated with a large-scale project using TypeScript as of yet, however I've found uses for it in smaller scales, particularly since it supports ECMAScript 6 syntax, and the transpiler can compile it down to ECMAScript 5, since current browsers don't completely support ECMAScript 6 at the time of writing.
+
+### What is Webpack?
+
+[webpack](http://www.)
+
 
 ### Demo
 
@@ -57,3 +62,25 @@ var me = new MeObj('Sam Skeen');
 ```
 
 Seeing that I'm now properly sending the constructor the correct type, it will successfully create a new object with my name.
+
+Time goes on and I realized that I wanted to go by a code name to a Star Wars party.  I set up a method in order to do this in my class, but I also wanted to do it in another way, so I created a global function which would do the same thing:
+```typescript
+function setName_me(newName:string) {
+	me.name = newName;
+}
+```
+
+This time, I wanted to make sure it worked, so I tested it.  I tried to use both the method and the global function to change my code name, and passed it incorrect data types to make sure it worked:
+```typescript
+me.setName(5);
+
+setName_me({
+	name: 'Jar Jar'
+});
+```
+
+Same thing happened with these lines of code as happend above.  Since these data types are different from the data types I had suggested at first (plus who would want a code name of Jar Jar?), the compiler will realize this and ask me to fix it.  As such, I added both of these lines of code and they worked:
+```typescript
+me.setName('R2-D2');
+setName_me('C-3PO');
+```
