@@ -170,17 +170,17 @@ With that set up, Webpack will run.  However, in order to make sure that the Typ
 {
 	"compilerOptions": {    // "options that would've been added to the command line had you" 
                           // "done that in the first place"
-		"target": "ES5",      // the target version of ECMAScript for the TypeScript to be
-                          // compiled to
-		"sourceMap": true,    // option for adding a source map to your original code
-		"jsx": "react"        // if you use jsx syntax at all in your project, TypeScript 
-	},                      // requires you to add this option; since this repo doesn't handle
-                          // any jsx, this was added purely so that I could show you how 
-                          // to add it if you are using it
+		"target": "ES5",      // "the target version of ECMAScript for the TypeScript to be"
+                          // "compiled to"
+		"sourceMap": true,    // "option for adding a source map to your original code"
+		"jsx": "react"        // "if you use jsx syntax at all in your project, TypeScript"
+	},                      // "requires you to add this option; since this repo doesn't handle"
+                          // "any jsx, this was added purely so that I could show you how" 
+                          // "to add it if you are using it"
 	
-	"files": [                         // you stick all of the type definition files in this 
-		"typings/angular/angular.d.ts"   // array so that your code editor and transpiler would 
-	]                                  // recognize the otherwise unrecognized keywords from 
-}                                    // the frameworks you're trying to use and not throw an
-                                     // error saying that it can't find such-and-such variable
+	"files": [                         // "you stick all of the type definition files in this" 
+		"typings/angular/angular.d.ts"   // "array so that your code editor and transpiler would"
+	]                                  // "recognize the otherwise unrecognized keywords from"
+}                                    // "the frameworks you're trying to use and not throw an"
+                                     // "error saying that it can't find such-and-such variable"
 ```
