@@ -49,7 +49,8 @@ function replaceMe(newPerson: MeObj) {
 
 
 
-// replaceMe('Dr. Dingelhopper');	// Doesn't like the fact that I'm trying to pass in a string instead of an object that matches the criteria for MeObj
+// replaceMe('Dr. Dingelhopper');	// Doesn't like the fact that I'm trying to pass in 
+									// a string instead of an object that matches the criteria for MeObj
 
 
 let Superman = new MeObj('Clark Kent');

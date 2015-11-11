@@ -1,0 +1,24 @@
+{
+  "name": "typescript-webpack-demo",
+  "version": "1.0.0",
+  "description": "This repo is created to demonstrate the use of TypeScript.  All files in this repo with the file extension `.ts` or `.tsx` are designated TypeScript files, and where the focus is for this repo.  This project doesn't show a finished product such as a fully-functioning website, but only goes over some of the basics of TypeScript",
+  "main": "typescript.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cwadrupldijjit/typescript-webpack-demo"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwadrupldijjit/typescript-webpack-demo/issues"
+  },
+  "homepage": "https://github.com/cwadrupldijjit/typescript-webpack-demo",
+  "dependencies": {
+    "ts-loader": "^0.7.1",
+    "typescript": "^1.6.2",
+    "webpack": "^1.12.4"
+  }
+}

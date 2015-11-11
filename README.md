@@ -16,10 +16,6 @@ This repo is created to demonstrate the use of TypeScript.  All files in this re
 
 The true power in TypeScript comes through working in larger-scale projects.  I haven't been affiliated with a large-scale project using TypeScript as of yet, however I've found uses for it in smaller scales, particularly since it supports ECMAScript 6 syntax, and the transpiler can compile it down to ECMAScript 5, since current browsers don't completely support ECMAScript 6 at the time of writing.
 
-### What is Webpack?
-
-[webpack](http://www.)
-
 
 ### Demo
 
@@ -84,3 +80,53 @@ Same thing happened with these lines of code as happend above.  Since these data
 me.setName('R2-D2');
 setName_me('C-3PO');
 ```
+
+And, as it turns out, I guess I went to the party as C-3PO.
+
+Now, at this point, I want to transcompile it to JavaScript in case I wanted to add this awesome functionality to my web app.  I would then go to my command line and type as a command in the folder where my `.ts` file is located:
+``` command
+tsc Typing.ts
+```
+
+This base command is built into the npm TypeScript install we did earlier.  It copies the name of the `.ts` file referenced as the first option after the command and then transpiles the TypeScript to JavaScript.  This is what the output looks like:
+```javascript
+var MeObj = (function () {
+    function MeObj(name) {
+        this.name = name;
+    }
+    ;
+    MeObj.prototype.setName = function (newName) {
+        this.name = newName;
+    };
+    ;
+    return MeObj;
+})();
+;
+// var me = new MeObj(23);
+var me = new MeObj('Sam Skeen');
+function setName_me(newName) {
+    me.name = newName;
+}
+// me.setName(5);
+// setName_me({
+// 	name: 'Jar Jar'
+// });
+me.setName('R2-D2');
+setName_me('C-3PO');
+```
+
+We can also set the transpiler to watch for changes in the source files by using the `-w` or `--watch` options preceeding the file name in the command line, like so:
+```command
+tsc -w Typing.ts
+```
+If you have more than just that one file, you do have the option to reference the file (with the relative path) separated by spaces:
+```command
+tsc -w Typing.ts Typing2.ts public/Typing3.ts
+```
+The downside to this is that you have to reference **EVERY SINGLE FILE** in your project you want to be transcompiled and watched in order to have this command work like you'd want, which means that if you add another `.ts` or `.tsx` file to your project, you would stop the current compiling watcher, add the file to the long line of files already in your project, and then start it up again.  This could be *REALLY* annoying.  That's why I suggest using a build service such as Grunt, Gulp, or Webpack.  As you probably already guessed, I am using Webpack in this repo.
+
+### What is Webpack?
+
+[Webpack](http://www.)
+
+#### Webpack
